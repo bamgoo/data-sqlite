@@ -24,6 +24,6 @@ require (
 	modernc.org/memory v1.11.0 // indirect
 )
 
-replace github.com/infrago/infra => ../infra
+replace github.com/infrago/infra => ../bamgoo
 
 replace github.com/infrago/data => ../data
