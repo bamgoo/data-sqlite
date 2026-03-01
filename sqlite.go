@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/bamgoo/data"
+	"github.com/infrago/data"
 	_ "modernc.org/sqlite"
 )
 

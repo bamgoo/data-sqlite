@@ -1,2 +1,2 @@
 # data-sqlite
-bamgoo sqlite data driver.
+infrago sqlite data driver.

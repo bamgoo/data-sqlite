@@ -1,15 +1,15 @@
-module github.com/bamgoo/data-sqlite
+module github.com/infrago/data-sqlite
 
 go 1.25.3
 
 require (
-	github.com/bamgoo/bamgoo v0.0.0
-	github.com/bamgoo/data v0.0.0
+	github.com/infrago/infra v0.0.0
+	github.com/infrago/data v0.0.0
 	modernc.org/sqlite v1.39.0
 )
 
 require (
-	github.com/bamgoo/base v0.0.1 // indirect
+	github.com/infrago/base v0.0.1 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
@@ -24,6 +24,6 @@ require (
 	modernc.org/memory v1.11.0 // indirect
 )
 
-replace github.com/bamgoo/bamgoo => ../bamgoo
+replace github.com/infrago/infra => ../infra
 
-replace github.com/bamgoo/data => ../data
+replace github.com/infrago/data => ../data

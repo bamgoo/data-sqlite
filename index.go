@@ -1,8 +1,8 @@
 package data_sqlite
 
 import (
-	"github.com/bamgoo/bamgoo"
-	"github.com/bamgoo/data"
+	"github.com/infrago/infra"
+	"github.com/infrago/data"
 )
 
 func Driver() data.Driver {
@@ -10,6 +10,6 @@ func Driver() data.Driver {
 }
 
 func init() {
-	bamgoo.Register("sqlite", Driver())
-	bamgoo.Register("sqlite3", Driver())
+	infra.Register("sqlite", Driver())
+	infra.Register("sqlite3", Driver())
 }
