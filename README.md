@@ -1,51 +1,33 @@
 # data-sqlite
 
-`data-sqlite` 是 `data` 模块的 `sqlite` 驱动。
+`data-sqlite` 是 `github.com/infrago/data` 的**sqlite 驱动**。
 
-## 安装
+## 包定位
 
-```bash
-go get github.com/infrago/data@latest
-go get github.com/infrago/data-sqlite@latest
-```
+- 类型：驱动
+- 作用：把 `data` 模块的统一接口落到 `sqlite` 后端实现
 
-## 接入
+## 快速接入
 
 ```go
 import (
     _ "github.com/infrago/data"
     _ "github.com/infrago/data-sqlite"
-    "github.com/infrago/infra"
 )
-
-func main() {
-    infra.Run()
-}
 ```
-
-## 配置示例
 
 ```toml
 [data]
 driver = "sqlite"
 ```
 
-## 公开 API（摘自源码）
+## `setting` 专用配置项
 
-- `func Driver() data.Driver`
-- `func (d *sqliteDriver) Connect(inst *data.Instance) (data.Connection, error)`
-- `func (c *sqliteConnection) Open() error`
-- `func (c *sqliteConnection) Close() error`
-- `func (c *sqliteConnection) Health() data.Health`
-- `func (c *sqliteConnection) DB() *sql.DB`
-- `func (c *sqliteConnection) Dialect() data.Dialect`
-- `func (sqliteDialect) Name() string { return "sqlite" }`
-- `func (sqliteDialect) Quote(s string) string`
-- `func (sqliteDialect) Placeholder(_ int) string { return "?" }`
-- `func (sqliteDialect) SupportsILike() bool      { return false }`
-- `func (sqliteDialect) SupportsReturning() bool  { return false }`
+配置位置：`[data].setting`
 
-## 排错
+- `dsn`
 
-- driver 未生效：确认模块段 `driver` 值与驱动名一致
-- 连接失败：检查 endpoint/host/port/鉴权配置
+## 说明
+
+- `setting` 仅对当前驱动生效，不同驱动键名可能不同
+- 连接失败时优先核对 `setting` 中 host/port/认证/超时等参数
